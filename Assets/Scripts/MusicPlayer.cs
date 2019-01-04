@@ -1,26 +1,20 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 
+    //Singleton Pattern for Music Player
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-    }
+        int countMusicPlayer = FindObjectsOfType<MusicPlayer>().Length;
 
-    void Start ()
-    {
-        Invoke("LoadNextScene", 2f);
-    }
-
-    private void LoadNextScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        if (countMusicPlayer > 1)
         {
-            nextSceneIndex = 0;
+            Destroy(gameObject);
         }
-        SceneManager.LoadScene(nextSceneIndex);
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
