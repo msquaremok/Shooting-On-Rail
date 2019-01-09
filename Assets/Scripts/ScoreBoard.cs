@@ -14,9 +14,9 @@ public class ScoreBoard : MonoBehaviour {
         scoreText.text = "score: " + currentScore.ToString();
     }
 	
-    public void ScoreHit(int scorePerHit)
+    public void ScoreHit(int scorePerDeath)
     {
-        currentScore = currentScore + scorePerHit;
+        currentScore = currentScore + scorePerDeath;
         scoreText.text = "score: " + currentScore.ToString();
     }
 }

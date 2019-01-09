@@ -170,9 +170,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4001452363220900}
   - component: {fileID: 198944924476678160}
+  - component: {fileID: 114110728353953286}
   - component: {fileID: 199030966953852380}
   m_Layer: 0
-  m_Name: Left Bullets
+  m_Name: Gun Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,9 +375,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4895819559070170}
   - component: {fileID: 198199151108323458}
+  - component: {fileID: 114294491022437978}
   - component: {fileID: 199475215902518100}
   m_Layer: 0
-  m_Name: Right Bullets
+  m_Name: Gun Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,10 +1858,25 @@ MonoBehaviour:
   controlYSpeed: 20
   xRange: 25
   yRange: 10
+  guns:
+  - {fileID: 1361639205160590}
+  - {fileID: 1812626067352964}
+  damage: 0
   posPitchFactor: -1.5
   posYawFactor: 1.8
   controlPitchFactor: -20
   controlRollFactor: -30
+--- !u!114 &114110728353953286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361639205160590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9005838e83212064a85855a0dace8acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114137383894419552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1873,6 +1890,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLoadDelay: 2
   deathFX: {fileID: 1597230718705010}
+--- !u!114 &114294491022437978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812626067352964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9005838e83212064a85855a0dace8acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198199151108323458
 ParticleSystem:
   m_ObjectHideFlags: 1
