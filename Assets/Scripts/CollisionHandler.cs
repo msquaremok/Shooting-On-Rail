@@ -15,7 +15,7 @@ public class CollisionHandler : MonoBehaviour {
     {
         StartDeathSequence();
         deathFX.SetActive(true);
-        Invoke("ReloadScene", levelLoadDelay);
+        StartCoroutine(ReloadScene());
     }
 
     private void StartDeathSequence()
@@ -23,8 +23,9 @@ public class CollisionHandler : MonoBehaviour {
         gameObject.SendMessage("PlayerDeath");
     }
 
-    private void ReloadScene()      //string reference
+    IEnumerator ReloadScene()      //string reference
     {
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(levelLoadDelay);
+        SceneManager.LoadScene("GameOver");
     }
 }

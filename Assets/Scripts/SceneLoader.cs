@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
+    [SerializeField] float delayInSeconds = 2f; 
+
     void Start()
     {
-        Invoke("LoadNextScene", 2f);
+        StartCoroutine(LoadNextScene());
     }
 
-    private void LoadNextScene()
+    IEnumerator LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -18,6 +20,8 @@ public class SceneLoader : MonoBehaviour {
         {
             nextSceneIndex = 0;
         }
-            SceneManager.LoadScene(nextSceneIndex);
+
+        yield return new WaitForSeconds(delayInSeconds);
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }

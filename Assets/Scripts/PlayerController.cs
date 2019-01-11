@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour {
     public void PlayerDeath()         //called by string ref
     {
         isControlEnabled = false;
+        
     }
 
     private void ProcessFiring()
